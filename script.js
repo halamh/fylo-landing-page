@@ -21,24 +21,35 @@ document.addEventListener( "DOMContentLoaded", function() {
     arrow.onmouseover = changeColor;
     arrow.onmouseout = restoreColor;
 
-    //FOOTER AVTIVE STATE (Code still incomplete)
+    //FOOTER AVTIVE STATE
+
+    // SOLUTION 1 - USING INDIVIDUAL IDs
+
+    // let footerIcon = ["phone", "email", "about-us", "jobs", "press", "blog", "contact-us", "terms", "privacy"];
+    // footerIcon = footerIcon.map(element => document.getElementById(element)); 
 
 
-    let footerIcon = [];
+    // SOLUTION 2 - USING ONE CLASS NAME (recommended)
 
-    for (let i=0; i<document.getElementsByClassName("sub-footer").length; i++) {
-        footerIcon.push(document.getElementsByClassName("sub-footer")[i].querySelector("p"))
-    };
+    let footerIcon = document.getElementsByClassName("pointer");
 
     function changeFooter() {
-        event.target.style.color = "blue"
+        event.target.style.color = "blue";
     };
 
-    function assign(p) {
-        p.onmouseover = changeFooter;
+    function restoreFooter() {
+        event.target.style.color = "";
+    }
+
+    function assign(ele) {
+        ele.onmouseover = changeFooter;
+        ele.onmouseout = restoreFooter;
     };
 
-    footerIcon.forEach(assign(element));
+    //footerIcon.forEach(assign);                   // Related to Solution 1
 
-
+    for (let i=0; i<footerIcon.length; i++) {       // getEelementByClassName can be accessed using indexes, hence the for loop.
+        assign(footerIcon[i])
+    }
 });
+
