@@ -1,4 +1,4 @@
-document.addEventListener( "DOMContentLoaded", function() {
+//document.addEventListener( "DOMContentLoaded", function() {} ==> Replace this code with defer.
 
     //"See How Fylo Works" active state
 
@@ -51,5 +51,5 @@ document.addEventListener( "DOMContentLoaded", function() {
     for (let i=0; i<footerIcon.length; i++) {       // getEelementByClassName can be accessed using indexes, hence the for loop.
         assign(footerIcon[i])
     }
-});
+
 
