@@ -188,6 +188,7 @@ footer {
     gap: 10px;
     background-color: var(--Dark-Blue);
     color: white;
+    cursor: pointer;
 }
 
 .footer-section {
